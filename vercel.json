@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "dmt-dashboard/$1"
+    }
+  ],
+  "env": {
+    "ACCESS_TOKEN": "ACCESS_TOKEN",
+    "SUPABASE_URL": "@supabase_url",
+    "SUPABASE_SERVICE_ROLE_KEY": "@supabase_service_role_key",
+    "OPENAI_API_KEY": "@openai_api_key",
+    "GOOGLE_CHAT_WEBHOOK_URL": "@google_chat_webhook_url"
+  }
+} 

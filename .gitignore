@@ -1,0 +1,41 @@
+# ===== Environment Variables =====
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# ===== Meta / Graph API =====
+ACCESS_TOKEN=*
+
+# ===== Supabase =====
+SUPABASE_URL=*
+SUPABASE_SERVICE_ROLE_KEY=*
+
+# ===== OpenAI =====
+OPENAI_API_KEY=*
+
+# ===== Google Chat Webhook =====
+GOOGLE_CHAT_WEBHOOK_URL=*
+
+# ===== Node.js =====
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ===== Build =====
+dist/
+build/
+out/
+
+# ===== IDE =====
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ===== OS =====
+.DS_Store
+Thumbs.db 
+.vercel
