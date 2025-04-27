@@ -17,4 +17,12 @@ export function formatPercentage(num: number): string {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   }).format(num)
+}
+
+export function formatDate(date: string): string {
+  return new Date(date).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric'
+  });
 } 

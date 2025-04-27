@@ -1,0 +1,33 @@
+@startuml DMTT Architecture
+
+!define SPRITESURL https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/v1.0/sprites
+!includeurl SPRITESURL/nextjs.puml
+!includeurl SPRITESURL/supabase.puml
+!includeurl SPRITESURL/facebook.puml
+
+package "DMTT Dashboard" {
+  [Next.js Frontend] as Frontend
+  [API Routes] as API
+  [MetaDataBackfill] as Backfill
+  [AI Analysis] as AI
+  database "Supabase" {
+    [meta_historical_data]
+    [meta_accounts]
+    [alert_high_cpa]
+  }
+}
+
+cloud {
+  [Meta Marketing API] as MetaAPI
+  [OpenAI API] as OpenAI
+}
+
+Frontend --> API : HTTP/REST
+API --> Backfill : Fetch Data
+Backfill --> MetaAPI : Rate-Limited Requests
+Backfill --> Supabase : Store Data
+AI --> OpenAI : Analysis Requests
+AI --> Supabase : Fetch Context
+Frontend --> AI : Query Analysis
+
+@enduml 
